@@ -51,6 +51,11 @@ public class UsersController {
     }
 
 
+    @GetMapping("all")
+    public ResponseEntity<List<Users>> queryAll() {
+        return ResponseEntity.ok(this.usersService.queryAll());
+    }
+
     @GetMapping("{id}/{remoteId}")
     public ResultObject queryById(@PathVariable("id") Long id, @PathVariable("remoteId") Long remoteId) {
         return this.usersService.updateMultiDataSourceByUserId(id, remoteId);

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * (RemoteUsers)表控制层
@@ -46,6 +47,15 @@ public class RemoteUsersController {
     @GetMapping("{id}")
     public ResponseEntity<RemoteUsers> queryById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(this.remoteUsersService.queryById(id));
+    }
+
+
+    /**
+     * @return all users
+     */
+    @GetMapping("all")
+    public ResponseEntity<List<RemoteUsers>> queryById() {
+        return ResponseEntity.ok(this.remoteUsersService.queryAll());
     }
 
     /**

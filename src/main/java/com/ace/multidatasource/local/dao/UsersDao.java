@@ -27,6 +27,9 @@ public interface UsersDao {
      */
     Users queryById(Long userid);
 
+
+    List<Users> queryAll();
+
     /**
      * 查询指定行数据
      *

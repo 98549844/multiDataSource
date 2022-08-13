@@ -5,6 +5,8 @@ import com.ace.multidatasource.remote.entity.RemoteUsers;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import java.util.List;
+
 /**
  * (RemoteUsers)表服务接口
  *
@@ -20,6 +22,9 @@ public interface RemoteUsersService {
      * @return 实例对象
      */
     RemoteUsers queryById(Long userid);
+
+
+    List<RemoteUsers> queryAll();
 
     /**
      * 分页查询

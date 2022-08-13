@@ -53,8 +53,36 @@
                status,
                userAccount,
                username
-        from remote_users
+        from users
         where userId = #{userId}
+    </select>
+
+    <!--查询所有-->
+    <select id="queryAll" resultMap="RemoteUsersMap">
+        select userId,
+               createdBy,
+               createdDate,
+               lastUpdateDate,
+               lastUpdatedBy,
+               version,
+               age,
+               birthday,
+               description,
+            domain,
+            email,
+            enabled,
+            expireDate,
+            gender,
+            hostName,
+            ip,
+            loginDateTime,
+            mobile,
+            password,
+            remark,
+            status,
+            userAccount,
+            username
+        from users
     </select>
 
     <!--查询指定行数据-->
@@ -63,7 +91,7 @@
         userId, createdBy, createdDate, lastUpdateDate, lastUpdatedBy, version, age, birthday, description, domain,
         email, enabled, expireDate, gender, hostName, ip, loginDateTime, mobile, password, remark, status, userAccount,
         username
-        from remote_users
+        from users
         <where>
             <if test="userId != null">
                 and userId = #{userId}
@@ -141,7 +169,7 @@
     <!--统计总行数-->
     <select id="count" resultType="java.lang.Long">
         select count(1)
-        from remote_users
+        from users
         <where>
             <if test="userId != null">
                 and userId = #{userId}
@@ -217,7 +245,7 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="userId" useGeneratedKeys="true">
-        insert into remote_users(createdBy, createdDate, lastUpdateDate, lastUpdatedBy, version, age, birthday,
+        insert into users(createdBy, createdDate, lastUpdateDate, lastUpdatedBy, version, age, birthday,
                                  description, domain, email, enabled, expireDate, gender, hostName, ip, loginDateTime,
                                  mobile, password, remark, status, userAccount, username)
         values (#{createdBy}, #{createdDate}, #{lastUpdateDate}, #{lastUpdatedBy}, #{version}, #{age}, #{birthday},
@@ -226,7 +254,7 @@
     </insert>
 
     <insert id="insertBatch" keyProperty="userId" useGeneratedKeys="true">
-        insert into remote_users(createdBy, createdDate, lastUpdateDate, lastUpdatedBy, version, age, birthday,
+        insert into users(createdBy, createdDate, lastUpdateDate, lastUpdatedBy, version, age, birthday,
         description, domain, email, enabled, expireDate, gender, hostName, ip, loginDateTime, mobile, password, remark,
         status, userAccount, username)
         values
@@ -240,7 +268,7 @@
     </insert>
 
     <insert id="insertOrUpdateBatch" keyProperty="userId" useGeneratedKeys="true">
-        insert into remote_users(createdBy, createdDate, lastUpdateDate, lastUpdatedBy, version, age, birthday,
+        insert into users(createdBy, createdDate, lastUpdateDate, lastUpdatedBy, version, age, birthday,
         description, domain, email, enabled, expireDate, gender, hostName, ip, loginDateTime, mobile, password, remark,
         status, userAccount, username)
         values
@@ -278,7 +306,7 @@
 
     <!--通过主键修改数据-->
     <update id="update">
-        update remote_users
+        update users
         <set>
             <if test="createdBy != null">
                 createdBy = #{createdBy},
@@ -353,7 +381,7 @@
     <!--通过主键删除-->
     <delete id="deleteById">
         delete
-        from remote_users
+        from users
         where userId = #{userId}
     </delete>
 

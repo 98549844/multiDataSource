@@ -10,6 +10,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * (RemoteUsers)表服务实现类
@@ -31,6 +32,11 @@ public class RemoteUsersServiceImpl implements RemoteUsersService {
     @Override
     public RemoteUsers queryById(Long userid) {
         return this.remoteUsersDao.queryById(userid);
+    }
+
+    @Override
+    public List<RemoteUsers> queryAll() {
+        return this.remoteUsersDao.queryAll();
     }
 
     /**

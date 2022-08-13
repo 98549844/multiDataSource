@@ -1,6 +1,8 @@
 package com.ace.multidatasource.config;
 
 import com.atomikos.jdbc.AtomikosDataSourceBean;
+import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+import com.mysql.jdbc.jdbc2.optional.MysqlXADataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -63,8 +65,9 @@ public class RemoteDBConnectionConfig {
         //JDBC连, 不支持多数据库的事务管理
         //return DataSourceBuilder.create().build();
 
-        //MySQLDataSource mySQLDataSource = new MySQLDataSource(); for mysql
-        MariaDbDataSource xaDataSource = new MariaDbDataSource();
+
+        MysqlXADataSource xaDataSource = new MysqlXADataSource(); //for mysql
+      //  MariaDbDataSource xaDataSource = new MariaDbDataSource();
         xaDataSource.setUrl(getUrl());
         xaDataSource.setUser(getUserName());
         xaDataSource.setPassword(getPassword());

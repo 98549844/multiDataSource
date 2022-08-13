@@ -9,12 +9,10 @@ import com.ace.multidatasource.local.service.UsersService;
 import com.ace.multidatasource.remote.dao.RemoteUsersDao;
 import com.ace.multidatasource.remote.entity.RemoteUsers;
 import com.ace.multidatasource.util.RandomUtil;
-import org.apache.commons.logging.Log;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.transaction.TransactionManager;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
@@ -44,6 +42,13 @@ public class UsersServiceImpl implements UsersService {
     public Users queryById(Long userid) {
         return this.usersDao.queryById(userid);
     }
+
+
+    @Override
+    public List<Users> queryAll() {
+        return this.usersDao.queryAll();
+    }
+
 
     /**
      * 分页查询

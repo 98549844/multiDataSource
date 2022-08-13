@@ -23,6 +23,8 @@ public interface RemoteUsersDao {
      */
     RemoteUsers queryById(Long userid);
 
+    List<RemoteUsers> queryAll();
+
     /**
      * 查询指定行数据
      *

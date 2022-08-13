@@ -26,6 +26,8 @@ public interface UsersService {
 
     ResultObject updateMultiDataSourceByUserId(Long userid, Long remoteUserIs);
 
+    List<Users> queryAll();
+
     /**
      * 分页查询
      *

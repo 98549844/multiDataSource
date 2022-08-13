@@ -13,8 +13,8 @@ public class MultiDataSourceApplication {
 
         SpringApplication.run(MultiDataSourceApplication.class, args);
 
-        System.out.println("独立多数据源demo");
-        System.out.println("每个数据源有对应的:");
+        System.out.println("Independent multiple data sources demo");
+        System.out.println("Each data source has a corresponding: ");
         System.out.println("controller,service,serviceImpl,dao,xml,entity");
 
     }

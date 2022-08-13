@@ -39,22 +39,50 @@
                age,
                birthday,
                description,
-               domain,
-               email,
-               enabled,
-               expireDate,
-               gender,
-               hostName,
-               ip,
-               loginDateTime,
-               mobile,
-               password,
-               remark,
-               status,
-               userAccount,
-               username
+            domain,
+            email,
+            enabled,
+            expireDate,
+            gender,
+            hostName,
+            ip,
+            loginDateTime,
+            mobile,
+            password,
+            remark,
+            status,
+            userAccount,
+            username
         from users
         where userId = #{userId}
+    </select>
+
+    <!--查询所有-->
+    <select id="queryAll" resultMap="UsersMap">
+        select userId,
+               createdBy,
+               createdDate,
+               lastUpdateDate,
+               lastUpdatedBy,
+               version,
+               age,
+               birthday,
+               description,
+            domain,
+            email,
+            enabled,
+            expireDate,
+            gender,
+            hostName,
+            ip,
+            loginDateTime,
+            mobile,
+            password,
+            remark,
+            status,
+            userAccount,
+            username
+        from users
     </select>
 
     <!--查询指定行数据-->
