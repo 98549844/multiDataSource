@@ -1,0 +1,1 @@
+{"id":"192.168.10.4.tm164945268168900001","wasCommitted":false,"participants":[{"uri":"192.168.10.4.tm1","state":"TERMINATED","expires":1649452807092,"resourceName":"datasource"},{"uri":"192.168.10.4.tm2","state":"TERMINATED","expires":1649452807092,"resourceName":"remoteDatasource"}]}
